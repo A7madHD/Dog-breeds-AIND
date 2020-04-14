@@ -81,7 +81,7 @@ def classify_images(images_dir, results_dic, model):
             label_word = word.strip()
             classifier_labels.append(label_word)
             if label_word == results_dic[filenames_list[idx]][0]:
-                results_dic[filenames_list[idx]].extend([label_word,1])
+                results_dic[filenames_list[idx]].extend([", ".join(classifier_labels),1])
                 done = 1
                 break
         if done != 1:
